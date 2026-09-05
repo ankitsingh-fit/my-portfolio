@@ -428,6 +428,10 @@
         .reviews-title {
             margin-top: 3rem;
         }
+        #reviewsList {
+            max-height: 280px;
+            overflow-y: auto;
+        }
         .review {
             border-top: 1px solid rgba(255,255,255,0.08);
             padding: 1rem 0;
@@ -711,7 +715,7 @@
                     return;
                 }
 
-                list.innerHTML = reviews.map(r => `
+                list.innerHTML = reviews.slice(0, 5).map(r => `
                     <div class="review">
                         <strong>${safe(r.name)}</strong>
                         <div class="review-stars">${stars(r.rating)}</div>
