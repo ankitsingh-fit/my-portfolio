@@ -688,8 +688,7 @@
             try {
                 const { data: reviews, error } = await supabaseClient
                     .from("ratings")
-                    .select("*")
-                    .order("created_at", { ascending: false });
+                    .select("*");
 
                 if (error) throw error;
 
